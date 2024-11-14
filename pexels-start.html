@@ -69,6 +69,38 @@
           font-size: 3.5rem;
         }
       }
+
+      /* Stili per le card e il modale */
+      .card img {
+        height: 200px;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .card-title {
+        height: 1.5em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .card-text {
+        height: 4.5em;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+
+      .col-md-4 {
+        transition: opacity 0.3s ease;
+      }
+
+      #imageModal .modal-body img {
+        max-height: 70vh;
+        object-fit: contain;
+      }
     </style>
   </head>
   <body>
@@ -128,7 +160,7 @@
     </header>
     <main role="main">
       <section class="jumbotron text-center">
-        <div class="container">
+        <div id="jumbotron" class="container">
           <h1 class="jumbotron-heading">Album API example</h1>
           <p class="lead text-muted">
             This page will dynamically load pictures from the web, and display
@@ -142,77 +174,7 @@
       </section>
       <div class="album py-5 bg-light">
         <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <img
-                  src="https://picsum.photos/id/237/300/200"
-                  class="bd-placeholder-img card-img-top"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Lorem Ipsum</h5>
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        View
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        Edit
-                      </button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <img
-                  src="https://picsum.photos/id/237/300/200"
-                  class="bd-placeholder-img card-img-top"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Lorem Ipsum</h5>
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        View
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                      >
-                        Edit
-                      </button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div id="album" class="row">
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
                 <img
@@ -474,5 +436,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="script/cards.js"></script>
   </body>
 </html>
